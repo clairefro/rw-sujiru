@@ -3,7 +3,7 @@ import { useAuth } from '@redwoodjs/auth'
 const Nav = () => {
   const { logIn, logOut, isAuthenticated } = useAuth()
   return (
-    <nav>
+    <nav className="shadow">
       {isAuthenticated ? (
         <button
           onClick={() => logOut({ redirectTo: process.env.AUTH0_REDIRECT_URI })}
