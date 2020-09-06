@@ -5,7 +5,7 @@ import { RedwoodProvider, FatalErrorBoundary } from '@redwoodjs/web'
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 
 import Routes from 'src/Routes'
-
+import GlobalLayout from './layouts/GlobalLayout/GlobalLayout'
 import './index.css'
 
 const auth0 = new Auth0Client({
@@ -24,7 +24,9 @@ ReactDOM.render(
   <FatalErrorBoundary page={FatalErrorPage}>
     <AuthProvider client={auth0} type="auth0">
       <RedwoodProvider>
-        <Routes />
+        <GlobalLayout>
+          <Routes />
+        </GlobalLayout>
       </RedwoodProvider>
     </AuthProvider>
   </FatalErrorBoundary>,
